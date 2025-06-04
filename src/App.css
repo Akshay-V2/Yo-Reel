@@ -20,6 +20,9 @@ body {
   color: white;
   font-size: 24px;
   letter-spacing: -6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .top-bar {
