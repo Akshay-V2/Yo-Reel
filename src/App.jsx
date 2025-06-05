@@ -1,7 +1,14 @@
-import React from 'react'
+import {useState} from 'react'
+import Ticker from './components/Ticker.jsx';
 import './App.css'
 
 function App() {
+  const [digits, setDigits] = useState(0);
+
+  function generateRandomDigits() {
+    const randomNum = Math.floor(1000 + Math.random() * 9000);
+    setDigits(randomNum);
+  }
 
   return (
     <>
@@ -11,20 +18,13 @@ function App() {
     </div>
     {/* add a glitch effect to the text and a magnetic hover to the buttons */}
 
-    <div className='title'>
+    <div className='title' onClick={generateRandomDigits}>
       <h2>Your own</h2>
       <h1>REEL</h1>
     </div>
 
-    <div className='reel-container'>
-      <div className='reel'>
-        <div className='reel-display'></div>
-        <div className='reel-display'></div>
-        <div className='reel-display'></div>
-        <div className='reel-display'></div>
-      </div>
-    </div>
-    {/* add the realistic shadow for the reel box */}
+    <Ticker digits={digits} />
+    {/* add motion blur */}
     </>
   )
 }
