@@ -13,7 +13,7 @@ function App() {
 
     <div className='title'>
       <h2>Your own</h2>
-      <h1>Reel</h1>
+      <h1>REEL</h1>
     </div>
 
     <div className='reel-container'>
