@@ -102,6 +102,10 @@ h1 {
   transition: all cubic-bezier(.28,0,.11,.99) 1000ms;
 }
 
+.motion-blur {
+  animation: motionBlur 1000ms cubic-bezier(.28,0,.11,.99);
+}
+
 @keyframes motionBlur {
   0% {
     filter: blur(15px);
@@ -148,4 +152,21 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all cubic-bezier(.28,0,.11,.99) 200ms;
+}
+
+.reroll-button:hover {
+  scale: 1.1;
+}
+
+.spin {
+  animation: spin 500ms cubic-bezier(.28,0,.11,.99);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  } 100% {
+    transform: rotate(360deg);
+  }
 }

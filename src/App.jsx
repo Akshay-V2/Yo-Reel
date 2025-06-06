@@ -10,6 +10,12 @@ function App() {
   function generateRandomDigits() {
     const randomNum = Math.floor(1000 + Math.random() * 9000);
     setDigits(randomNum);
+
+    const diceIcon = document.querySelector('.dice');
+    diceIcon.classList.add('spin');
+    setTimeout(() => {
+      diceIcon.classList.remove('spin');
+    }, 500);
   }
 
   return (
@@ -26,7 +32,7 @@ function App() {
     </div>
     
     <div className='reroll-button' onClick={generateRandomDigits}>
-      <DiceFiveIcon size={32} weight="bold" />
+      <DiceFiveIcon size={32} weight="bold" className='dice' />
       <span>Reroll</span>
     </div>
     {/* add a dice roll animation */}

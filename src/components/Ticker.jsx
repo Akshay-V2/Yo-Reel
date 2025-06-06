@@ -16,6 +16,16 @@ const Ticker = ({ digits }) => {
                 currentReel.style.transform = `translateY(${digit * -100}%)`;
             }
         });
+        digitArray.forEach((_, index) => {
+            const reel = document.getElementById(`r${index + 1}`);
+            if (reel) {
+                reel.classList.remove('motion-blur');
+                reel.classList.add('motion-blur');
+                setTimeout(() => {
+                    reel.classList.remove('motion-blur');
+                }, 1000);
+            }
+        });
     }, [digitArray]);
 
     return (
