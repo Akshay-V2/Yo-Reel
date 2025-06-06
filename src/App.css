@@ -122,3 +122,30 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+.reroll-button {
+  position: absolute;
+  font-weight: 900;
+  font-size: 24px;
+  width: fit-content;
+  height: fit-content;
+  color: white;
+  padding-left: 38px;
+  padding-right: 38px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #FF5900 0%, #FF7700 100%);
+  box-shadow: inset 0px -6px 9.399999618530273px 0px #ff4400;
+  border: solid #AC2E00 1px;
+  cursor: pointer;
+  gap: 5px;
+  bottom: 0;
+  margin-left: 50%;
+  translate: -50%;
+  margin-bottom: 108px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

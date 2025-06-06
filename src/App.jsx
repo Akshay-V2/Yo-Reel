@@ -2,6 +2,8 @@ import {useState} from 'react'
 import Ticker from './components/Ticker.jsx';
 import './App.css'
 
+import { DiceFiveIcon } from "@phosphor-icons/react";
+
 function App() {
   const [digits, setDigits] = useState(0);
 
@@ -18,13 +20,21 @@ function App() {
     </div>
     {/* add a glitch effect to the text and a magnetic hover to the buttons */}
 
-    <div className='title' onClick={generateRandomDigits}>
+    <div className='title'>
       <h2>Your own</h2>
       <h1>REEL</h1>
     </div>
+    
+    <div className='reroll-button' onClick={generateRandomDigits}>
+      <DiceFiveIcon size={32} weight="bold" />
+      <span>Reroll</span>
+    </div>
+    {/* add a dice roll animation */}
+
 
     <Ticker digits={digits} />
     {/* add motion blur */}
+
     </>
   )
 }
