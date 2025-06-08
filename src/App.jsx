@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Ticker from './components/Ticker.jsx';
 import Silk from './components/Silk.jsx';
 import './App.css'
@@ -18,6 +18,35 @@ function App() {
       diceIcon.classList.remove('spin');
     }, 500);
   }
+
+  function handleMouseMove(e) {
+    const buttons = document.querySelectorAll('.top-button');
+    buttons.forEach(button => {
+      const rect = button.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const isHovering = 
+        x > 0 && 
+        x < rect.width && 
+        y > 0 && 
+        y < rect.height;
+
+      if (isHovering) {
+        const strength = 3;
+        const deltaX = (x - rect.width / 2) / strength;
+        const deltaY = (y - rect.height / 2) / strength;
+        button.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+      } else {
+        button.style.transform = `translate(0px, 0px)`;
+      }
+    });
+  }
+
+  useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
     <>
